@@ -1,0 +1,276 @@
+:root {
+    --primary: #2ecc71;
+    --secondary: #8B4513;
+    --background: #1a4314;
+    --text: #f0f0f0;
+    --card-bg: #2c3e50;
+    --swamp-green: #4a6741;
+    --mud-brown: #704214;
+}
+
+body {
+    font-family: 'Joti One', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+    cursor: url('swamp-cursor.png'), default;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--swamp-green), var(--mud-brown));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background-color: var(--primary);
+    padding: 1rem;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.btn {
+    background-color: var(--secondary);
+    color: var(--text);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Joti One', cursive;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #A0522D;
+    transform: scale(1.05);
+}
+
+.screen {
+    display: none;
+    background-color: rgba(44, 62, 80, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+#progressFill {
+    height: 100%;
+    background-color: var(--primary);
+    width: 0;
+    transition: width 0.3s;
+}
+
+#shrekContainer {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 2rem 0;
+}
+
+.click-button {
+    width: 200px;
+    height: 200px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.click-button:hover {
+    transform: scale(1.1);
+}
+
+.click-button:active {
+    transform: scale(0.95);
+}
+
+.shrek-icon {
+    width: 150%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.1s;
+}
+
+.shrek-icon:active {
+    transform: scale(0.9);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #34495e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+input {
+    padding: 0.5rem;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    background-color: #2c3e50;
+    color: var(--text);
+    font-family: 'Joti One', cursive;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: var(--text);
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+.glow {
+    text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 15px #2ecc71, 0 0 20px #2ecc71;
+}
+
+#upgradesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.upgrade {
+    background-color: var(--mud-brown);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 200px;
+}
+
+#friendsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.friend {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.currency-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#gameNav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.click-button {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.floating-number {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    pointer-events: none;
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}

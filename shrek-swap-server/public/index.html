@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrek Swamp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Joti+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background-animation"></div>
+    <header>
+        <h1 class="glow">🧅 Shrek Swamp 🧅</h1>
+    </header>
+    <main>
+        <div id="authScreen" class="screen active">
+            <h2 class="glow">Welcome to the Swamp</h2>
+            <p>Login or create a new account</p>
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Username (min 4 characters)" required minlength="4">
+                <input type="password" id="password" placeholder="Password (min 5 characters)" required minlength="5">
+                <button type="submit" id="loginBtn" class="btn">Login</button>
+                <button type="button" id="registerBtn" class="btn">Register</button>
+            </form>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <div class="card glow">
+                <h2 id="levelTitle">Level 1</h2>
+                <p id="scoreDisplay">Onions: 0 <img src="onion.png" alt="Onion" class="currency-icon"></p>
+                <p id="gemsDisplay">Gems: 0 <img src="gem.png" alt="Gem" class="currency-icon"></p>
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+                <p id="clicksToNextLevel">10 clicks to next level</p>
+            </div>
+            <div id="shrekContainer">
+                <button id="clickBtn" class="click-button">
+                    <img src="shrek.png" alt="Shrek" class="shrek-icon">
+                </button>
+            </div>
+            <p id="multiplierDisplay">Swamp Power: x1</p>
+        </div>
+
+        <nav id="gameNav" class="hidden">
+            <button id="upgradesBtn" class="btn">Upgrades</button>
+            <button id="gemsShopBtn" class="btn">Gems Shop</button>
+            <button id="friendsBtn" class="btn">Friends</button>
+            <button id="leaderboardBtn" class="btn">Leaderboard</button>
+            <button id="backToGameBtn" class="btn">Back to Game</button>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </nav>
+
+        <div id="gemsShopScreen" class="screen">
+            <h2 class="glow">Gems Shop</h2>
+            <div id="gemsShopList"></div>
+        </div>
+
+        <div id="upgradesScreen" class="screen">
+            <h2 class="glow">Swamp Upgrades</h2>
+            <div id="upgradesList"></div>
+        </div>
+
+        <div id="friendsScreen" class="screen">
+            <h2 class="glow">Swamp Friends</h2>
+            <div id="addFriend">
+                <input type="text" id="friendName" placeholder="Friend's username">
+                <button id="addFriendBtn" class="btn">Add Friend</button>
+            </div>
+            <div id="friendsList"></div>
+        </div>
+
+        <div id="leaderboardScreen" class="screen">
+            <h2 class="glow">Swamp Leaderboard</h2>
+            <table id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Onions</th>
+                        <th>Gems</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shrek Swamp. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

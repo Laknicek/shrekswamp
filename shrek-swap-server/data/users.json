@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1731417097045",
+    "username": "laknicek",
+    "password": "$2b$10$Pbcfyl435dO.MnUhQLHj5e6AdLUR9yeqRBTtWyXXsaIK4iwQQLju.",
+    "score": null,
+    "gems": 59,
+    "level": null,
+    "multiplier": null,
+    "friends": [],
+    "gemChance": 0.2,
+    "upgrades": {
+      "1": 51,
+      "2": 7,
+      "4": 296
+    }
+  }
+]
